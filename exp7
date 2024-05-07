@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Form</title>
+<script>
+function validateForm() {
+    var username = document.forms["loginform"]["user"].value;
+    var password = document.forms["loginform"]["pwd"].value;
+    
+    // Dummy validation, you should implement proper validation here
+    if (username === "admin" && password === "admin") {
+        alert("Successfully Logged In");
+        return true;
+    } else {
+        alert("Failed to Log In. Please check your credentials.");
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+
+<form name="loginform" method="post" action="http://localhost:8080/expt7/index.jsp" onsubmit="return validateForm()">
+<br/><br/><br/><br/>
+<table align="center">
+<tr><td align="center"><font color="blue" size="10">LOGIN FORM</font></td></tr>
+<tr><td><table><td>Username</td><td><input type="text" name="user"/></td></tr>
+<tr><td>Password</td><td><input type="password" name="pwd"/></td></tr>
+<tr><td align="center"><input type="submit" value="Login"/></td><td align="center"><input type="reset" value="Reset"/></td></tr>
+</table>
+</form>
+
+</body>
+</html>
