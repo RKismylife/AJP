@@ -1,35 +1,55 @@
- <!DOCTYPE html>
+HTML CODE 
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Login Form</title>
-<script>
-function validateForm() {
-    var username = document.forms["loginform"]["user"].value;
-    var password = document.forms["loginform"]["pwd"].value;
-    
-    // Dummy validation, you should implement proper validation here
-    if (username === "admin" && password === "admin") {
-        alert("Successfully Logged In");
-        return true;
-    } else {
-        alert("Failed to Log In. Please check your credentials.");
-        return false;
-    }
-}
-</script>
-</head>
+<head><title>login</title></head>
 <body>
-
-<form name="loginform" method="post" action="http://localhost:8080/expt7/index.jsp" onsubmit="return validateForm()">
-<br/><br/><br/><br/>
-<table align="center">
-<tr><td align="center"><font color="blue" size="10">LOGIN FORM</font></td></tr>
-<tr><td><table><td>Username</td><td><input type="text" name="user"/></td></tr>
+<form name="login form" method="post"
+action="http://localhost:8080/examples/servlet/Validation">
+<br/><br/><br/><br/><br/>
+<table align="center"><font color="blue" cellspacing="0" height="120">
+<tr><td align "center"><font color="blue" size="10">LOGIN FORM</font></td></tr>
+<tr><td><table><td>UserName</td><td><input type="text" name="user"/></td></tr>
 <tr><td>Password</td><td><input type="password" name="pwd"/></td></tr>
-<tr><td align="center"><input type="submit" value="Login"/></td><td align="center"><input type="reset" value="Reset"/></td></tr>
-</table>
-</form>
-
-</body>
+<tr><td align "center"><input type="submit" value="LOGIN"/></td><td align="center"><input type="Reset" value="RESET"/></td></tr>
+</table></td></tr></table></form></body>
 </html>
+
+
+
+
+
+
+
+
+
+
+JAVA CODE
+package AJP;
+
+
+import java.io.*;
+import java.util.*;
+import jakarta.servlet.*;
+
+public class Expt7 extends GenericServlet {
+	public void services (ServletRequest req,ServletResponse res) throws ServletException,IOException {
+		PrintWriter pw=res.getWriter();
+		String x=req.getParameter("user");
+		String y=req.getParameter("pwd");
+				
+		if(x.equals("admin")&& y.equals("admin")) {
+			pw.println("<font color='green' size ='5'>Welcome to this webpage</font>");
+		}
+		else {
+			pw.println("<font color='red' size ='5'>Invalid user name or password</font>");
+		}
+		pw.close();
+	}
+
+	@Override
+	public void service(ServletRequest arg0, ServletResponse arg1) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
