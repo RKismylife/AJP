@@ -3,8 +3,7 @@ HTML CODE
 <html>
 <head><title>login</title></head>
 <body>
-<form name="login form" method="post"
-action="http://localhost:8080/examples/servlet/Validation">
+<form action="class name">
 <br/><br/><br/><br/><br/>
 <table align="center"><font color="blue" cellspacing="0" height="120">
 <tr><td align "center"><font color="blue" size="10">LOGIN FORM</font></td></tr>
